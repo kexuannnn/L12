@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <div class="navbar">
+
+        <h1>Playlist Tracker</h1>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+
+            <a href="/playlist" class="active">Playlist</a>
+
+            <a href="/favourite">Favourite</a>
+
+            <a href="/create">Create</a>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <h2>Your Playlists</h2>
+
+    <% if (playlists.length === 0) { %>
+
+        <p>No playlists created yet.</p>
+
+    <% } else { %>
+
+        <% playlists.forEach(playlist => { %>
+
+            <div class="song-card">
+
+                <h3><%= playlist.name %></h3>
+
+                <p>Artist: <%= playlist.artist %></p>
+
+                <p>Played <%= playlist.playCount %> times</p>
+
+                <% if (playlist.favourite) { %>
+                    <p>❤️ Favourite Playlist</p>
+                <% } %>
+
+                <div class="song-buttons">
+
+                    <form action="/listen/<%= playlist.id %>" method="POST">
+                        <button type="submit">Listen</button>
+                    </form>
+
+                    <form action="/favourite/<%= playlist.id %>" method="POST">
+                        <button type="submit">
+                            <%= playlist.favourite ? 'Remove Favourite' : 'Add Favourite' %>
+                        </button>
+                    </form>
+
+                    <form action="/delete/<%= playlist.id %>" method="POST">
+                        <button type="submit">Delete</button>
+                    </form>
+
+                </div>
+
+            </div>
+
+        <% }) %>
+
+    <% } %>
+
+</body>
+</html>

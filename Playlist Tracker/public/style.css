@@ -1,0 +1,73 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 40px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: black;
+}
+
+.active{
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 5px 20px;
+}
+
+hr{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    border: 1px solid black;
+}
+
+.song-card{
+    border: 2px solid black;
+    padding: 25px;
+    margin-top: 20px;
+    background-color: white;
+}
+
+.song-buttons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.create-box{
+    border: 2px solid black;
+    background-color: white;
+    padding: 40px;
+    width: 700px;
+}
+
+.form-group{
+    margin-bottom: 25px;
+}
+
+input{
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+button{
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: white;
+    cursor: pointer;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favourite</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <div class="navbar">
+
+        <h1>Playlist Tracker</h1>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+
+            <a href="/playlist" >Playlist</a>
+
+            <a href="/favourite"class="active">Favourite</a>
+
+            <a href="/create">Create</a>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <h2>Favourite Songs ❤️</h2>
+
+    <% favourites.forEach(favourite => { %>
+
+        <div class="song-card">
+
+            <h3><%= favourite.name %></h3>
+
+            <p><%= favourite.artist %></p>
+
+            <p>Played <%= favourite.playCount %> times</p>
+
+            <div class="song-buttons">
+
+                <form action="/listen/<%= favourite.id %>" method="POST">
+                    <button type="submit">Listen</button>
+                </form>
+
+                <form action="/favourite/<%= favourite.id %>" method="POST">
+                    <button type="submit">Remove Favourite</button>
+                </form>
+
+                <form action="/delete/<%= favourite.id %>" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+
+            </div>
+
+        </div>
+
+    <% }) %>
+
+</body>
+</html>

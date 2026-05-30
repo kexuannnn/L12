@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Playlist</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <h1>Playlist Tracker</h1>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+
+            <a href="/playlist">Playlist</a>
+
+            <a href="/favourite">Favourite</a>
+
+            <a href="/create"class="active">Create</a>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <h2>Create a Playlist</h2>
+
+    <div class="create-box">
+
+        <form action="/create" method="POST">
+
+            <div class="form-group">
+
+                <label>Song Name:</label>
+
+                <input type="text" name="name" required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Artist Name:</label>
+
+                <input type="text" name="artist" required>
+
+            </div>
+
+            <button type="submit">Create</button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
